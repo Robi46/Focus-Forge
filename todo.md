@@ -1,0 +1,206 @@
+# Project TODO
+
+- [x] Create a portrait-first FocusForge design plan with clear Android boundary handling.
+- [x] Implement the configurable 5-minute single cue and 20-minute triple-cue / 120-second reset cycle.
+- [x] Persist active sessions and restore the correct timer state after screen lock or app return.
+- [x] Schedule local notifications so study cues remain available while the display is off.
+- [x] Create a modern focus dashboard with start, pause, resume, and confirmation-protected end controls.
+- [x] Add session setup controls for focus duration, cue interval, reset duration, sound, haptics, and display preference.
+- [x] Add Focus Shield guidance for Android notification permission, Do Not Disturb, Screen Pinning, and background behavior.
+- [x] Add local study history and a weekly study summary.
+- [x] Apply a custom dark-first visual system, responsive feedback, and accessible text contrast.
+- [x] Generate and apply a custom FocusForge Android app icon and branding configuration.
+- [x] Validate with TypeScript and automated timer-state tests.
+- [x] Prepare the Android build configuration and installation instructions for USB or file transfer.
+- [x] Diagnose and fix reported runtime, interaction, timer, and Android configuration bugs across FocusForge.
+- [x] Re-run full regression checks, including app bundling and timer-state tests, after repairs.
+- [x] Replace the unreliable web end-session alert with an in-app confirmation sheet that works across platforms.
+- [x] Correct the session rhythm to four sequential 5-minute rounds, each ending with one beep.
+- [x] Trigger three beeps only after the fourth 5-minute round, then run an automatic 2-minute rest before repeating the round cycle.
+- [x] Update timer labels, progress, local notification scheduling, and tests to match the clarified round-based cycle.
+- [x] Diagnose and fix Android audible cue delivery for the one-beep study-round and three-beep rest cues.
+- [x] Verify cue permission, sound configuration, and safe fallback behavior after the audio repair.
+- [x] Clarify browser-preview sound limits and add an Android-device audio diagnostic with visible Test beep feedback.
+- [ ] Replace the failed Expo Go audio-player cue path with native Android default-sound notifications for both Test beep and study-round cues.
+- [ ] Retest the exact native notification path in Expo Go using a sound-enabled channel created by the repaired app.
+- [x] Guard unsupported Expo Go notification scheduling and strengthen its direct in-app cue with a loud bundled tone, asset preloading, full player volume, and per-cue audio-mode setup.
+- [ ] Confirm direct in-app Test beep audibility on the user’s real Android device after reconnecting Expo Go to the updated service.
+- [x] Complete final packaging and documentation for Expo Go foreground beeps versus installed-APK screen-off cues.
+- [x] Increase the direct study-beep loudness while preserving a clean short cue.
+- [x] Redesign FocusForge with a modern premium white canvas, green typography, green linework, and refined elevated surfaces.
+- [x] Verify the redesigned Focus, History, Shield, and Settings screens at mobile and desktop widths.
+- [x] Fix the audio player so a fresh one-beep cue is heard after every completed 5-minute round and three separate beeps play after round four.
+- [x] Add regression coverage for repeated cue replay and fourth-round triple-beep sequencing.
+- [x] Maximize the cue waveform within Android media-playback headroom and guarantee full player volume on every replay.
+- [x] Replace the fresh-player workaround with awaited rewind-and-play on one preloaded audio player for every cue.
+- [x] Verify one-beep replay across rounds two through four and three distinct awaited replays at the rest boundary.
+- [x] Trace and fix the cycle-transition event logic so every 5-minute round emits one cue, round four emits three cues, and the following rest and next cycle are correct.
+- [x] Add end-to-end regression coverage for two complete study/rest cycles of cue events.
+- [x] Replace the derived cycle behavior with an explicit state sequence: rounds 1–3 end with one beep, round 4 ends with three beeps and enters 2-minute rest, then round 1 begins again.
+- [x] Add transition tests that verify the timer displays the correct five-minute round or two-minute rest state at every boundary.
+- [x] Reset and reload the audio source before every scheduled cue so playback remains available after the first beep.
+- [x] Surface the latest cue playback result in the app to distinguish a timer transition from an audio-delivery failure.
+- [x] Add one beep at the end of each 2-minute rest when the next cycle’s round 1 begins.
+- [x] Test the post-rest start cue alongside the following rounds one through four and the next rest transition.
+- [x] Document Android Screen Pinning and Do Not Disturb configuration for a distraction-resistant FocusForge session with emergency exceptions.
+- [x] Provide steps to publish, transfer, and install a FocusForge APK by USB cable or file transfer.
+- [x] Add an Allowed interruptions panel that persists the user’s selected emergency apps and presents APK-scanned launchable apps alongside common emergency choices.
+- [x] Explain required Android notification-policy access and custom native-build limits for scanning installed apps and applying interruption rules.
+- [x] Preserve the four-by-five-minute study rhythm and two-minute rest as the default while enabling a custom session-rhythm designer.
+- [x] Create a dedicated, smoothly navigable rhythm-design screen with safe validation and a return path to Focus.
+- [x] Record pause and interruption events in local session history for seven-day focus analytics.
+- [x] Rebuild History into a premium seven-day overview with a detailed current-day graph and organised activity breakdowns.
+- [x] Replace the basic history bars with an axis-labelled X–Y coordinate chart that plots real focus sessions, pauses, and interruptions.
+- [x] Repair Android hardware back navigation across FocusForge screens.
+- [x] Make the interruption allowlist state and Android device-level enforcement boundary clear, with an actionable setup route for blocking non-allowed interruptions.
+- [x] Make uninterrupted, paused, and app-leave history points unmistakably different with high-contrast colors, marker shapes, and a stronger legend.
+- [x] Replace the low-value coordinate charts with a study-quality dashboard showing real interruption and pause counts, a transparent focus score, and personalised improvement advice.
+- [x] Add an editable weekly focus goal with real progress tracking on the History dashboard.
+- [x] Add subject tags to new study sessions and show category-based history insights.
+- [x] Restore the previous useful historical graph presentation alongside the focus-quality dashboard, goals, and subject insights.
+- [x] Improve the visibility and explanatory guidance of the existing weekly focus-goal and subject-tag flows.
+- [x] Ensure an active session retains scheduled audible cues while the Android screen is locked, with a clear installed-APK verification path.
+- [x] Add reusable typed custom subjects and a clear current-subject selector before a study session starts.
+- [x] Add a labelled X–Y chart that visualizes today’s real focused time distribution by subject.
+- [x] Add a labelled X–Y chart that compares real subject focus-time distribution across the last seven days.
+- [x] Add a directly visible typed current-subject input and set action on the Focus screen before session start.
+- [x] Make the existing last-seven-day subject study-time distribution chart clearly discoverable in History.
+- [x] Replace the today session-duration chart with a real timestamped event timeline: X = event time, Y = cumulative pauses, app leaves, and interruptions.
+- [x] Replace the Focus header text with a premium orange local-time clock.
+- [x] Replace the next-beep metric with total focused time in the active session, resetting for every new session.
+- [x] Add a dedicated today session-length X–Y graph with time-of-day on X and focused session duration on Y.
+- [x] Move the today session-length X–Y graph into the immediately visible Focus flow so users do not need to hunt through setup content.
+- [x] Move the session-length chart from Focus to History and remove pause, app-leave, and interruption markers from it.
+- [x] Keep a separate full-day 24-hour event timeline in History for timestamped pause, app-leave, and interruption occurrence counts.
+- [x] Add touch pinch-to-zoom, drag-to-pan, and reset controls to the History graphs.
+- [x] Add tap-to-inspect labels for exact session duration, event time, and occurrence count on interactive History graphs.
+- [x] Replace image-like graph scaling with true data-domain time-window zoom, pan, and adaptive exact timestamp labels.
+- [x] Diagnose and reduce lag in chart interactions, timer updates, and History rendering on Android devices.
+- [x] Research and prioritize complementary next features for FocusForge after the completed core study, analytics, and Android-focus workflows.
+- [x] Add an optional typed goal before each study session and persist it with the session record.
+- [x] Ask the user to mark an ended session goal as completed or partial and persist the outcome.
+- [x] Add a seven-day X–Y History graph with day names on X and completed-goal counts on Y.
+- [x] Limit the detailed session list at the bottom of History to the most recent three days while retaining seven-day analytics.
+- [x] Superseded: do not remove saved history records or alter seven-day analytics when refreshing the bottom session list.
+- [x] Confirm the three-day refresh is isolated to the bottom History session list and preserves all saved logs and graphs.
+- [x] Add a dedicated Notes tab with private local note persistence and a modern mobile workspace.
+- [x] Provide core personal-note actions: create, edit, search, pin, checklist items, and delete with confirmation.
+- [x] Add a seven-day routine planner with day-by-day, hour-by-hour editable schedule entries.
+- [x] Polish Notes and routine-planner navigation, empty states, and responsive mobile interaction.
+- [x] Add custom folders and reusable tags to organize and filter personal notes.
+- [x] Add a direct Focus start action on each scheduled routine block using its title as the session goal.
+- [x] Audit and repair active-session Android protection, installed-app allowlist behavior, and emergency-interruption guidance.
+- [x] Audit and repair installed-APK locked-screen cue scheduling and document the required on-device verification.
+- [ ] Verify the selected v4 cue channels, display-off beeps, Priority DND behavior, and the manual emergency-app checklist on a freshly built custom Android APK.
+- [x] Audit FocusForge against current Google Play Store technical, policy, privacy, and sensitive-permission requirements.
+- [x] Prepare a policy-safe Android release configuration and Play Store security/privacy materials.
+- [x] Create Play Store listing copy and required graphic assets for FocusForge.
+- [x] Produce a tested release-readiness checklist for the user’s Play Console submission.
+- [ ] Complete the owner-controlled Play Console steps: developer account, public privacy-policy URL, signed AAB, internal testing, and final app-content declarations.
+- [x] Restore the stopped FocusForge development server and confirm preview availability.
+- [x] Verify the personal Notes and seven-day routine planner interactions with focused regression checks.
+- [x] Re-audit the Play Store release checklist and prepare the managed APK/AAB build handoff steps.
+- [x] Document the complete FocusForge technology stack, architecture, workflows, Android boundaries, and release procedure.
+- [x] Create a single AI-ready handoff guide with file maps, safe update patterns, test procedures, and unresolved device/release checks.
+- [ ] Diagnose Infinix Hot 10 failure of screen-off cues, DND setup, and app-leaving protection during an active study session.
+- [ ] Repair any feasible client behavior and document model-specific Android setup steps without overstating OS enforcement.
+- [x] Diagnose and repair pause/resume lag during active study sessions on Android.
+- [x] Improve locked-screen cue scheduling reliability and document the required physical-device verification on Infinix Hot 10.
+- [ ] Verify the queued pause/resume repair and new real locked-screen test on a freshly installed Android build.
+- [x] Restore the stopped FocusForge development server and confirm preview availability.
+- [x] Add an Android-only minimal floating session bubble for active backgrounded sessions, with dashboard return and dismiss controls.
+- [x] Add overlay permission guidance and lifecycle cleanup for the session bubble.
+- [ ] Verify the session bubble, dashboard return, and dismiss behavior on a freshly installed Android build.
+- [x] Add a compact bottom dashboard banner-ad area without displacing active study controls.
+- [x] Integrate a consent-aware advertising SDK configuration and update Play privacy, Data safety, and ads disclosures.
+- [x] Add a voluntary rewarded-ad flow that grants twelve hours of locally stored ad-free time without restricting core study features.
+- [x] Configure official Google test-ad defaults for Android verification and document the later replacement with the owner’s production AdMob IDs.
+- [ ] Replace Google test App and ad-unit IDs with the owner’s AdMob IDs, then rerun consent and ad behavior tests in an internal Android build before a revenue release.
+- [x] Prevent the Focus dashboard from crashing in Expo Go or an older installed APK when the Google Ads native module is not included.
+- [x] Add a clear, compact loading placeholder in the Focus ad space while a Google banner is being prepared.
+- [x] Add persistent Settings controls for a locked-screen cue sound choice and user-controlled floating session bubble enablement.
+- [x] Add a preview button for each selectable locked-screen cue sound in Settings.
+- [x] Add an in-app Android overlay-permission prompt for enabling the floating session bubble.
+- [x] Implement the first safe, local-first Track A feature ticket from the user-provided roadmap, preserving privacy, autonomy, and no-account operation.
+- [x] Complete Ticket 1: audit Play Store submission readiness, separate owner actions from code/config gaps, and update the handoff release status without changing AdMob IDs.
+- [x] Add direct Notes-to-Focus actions that use a note or checklist item as an idle session’s goal while preserving the existing active-session rule.
+- [x] Replace the Focus dashboard Session Rhythm card with the lightweight, event-driven Sandcastle versus Tide scene while preserving timer performance and custom rhythm support.
+- [x] Restore the preview service and make the Sandcastle versus Tide scene visibly show an idle sandcastle state before a study session starts.
+- [x] Prevent the Google Ads native-module red screen in Expo Go or an older installed APK without disabling ads in a fresh custom build.
+- [x] Refine Sandcastle versus Tide motion so wave, tier, flag, rest, and erosion transitions are physically coherent and calm.
+- [x] Improve Android background-cue diagnostics and fresh-build guidance for the user’s device without promising background audio until physical-device verification passes.
+- [x] Restart and verify the stopped FocusForge preview service.
+- [x] Strengthen installed-Android background cue scheduling and delivery diagnostics without altering the canonical timer rhythm.
+- [x] Correct the Session Rhythm Sandcastle scene so idle, tide, tier, pause, rest, and completion transitions remain calm and physically coherent.
+- [x] Move the Sandcastle animation title and scene directly below the Focus end-session control.
+- [x] Replace the active dashboard advertising UI with a minimal placeholder while retaining a clearly documented route to restore the existing ad implementation.
+- [x] Change live and gallery castles to a natural sand material with subtle packed-sand texture, layered edges, and realistic soft shadowing.
+- [x] Refine live and gallery castle surfaces into a denser tiny-dot sand-grain texture without increasing animation load materially.
+- [x] Restore the user-preferred simpler natural-sand castle design, removing the overcomplicated sculpted SVG silhouette.
+- [x] Increase the visible natural sand-grain density in live and gallery castle tiers without adding continuous animation work.
+- [x] Add a brief pause-safe falling-sand settlement effect for each new castle tier and strengthen the visible grain texture.
+- [x] Remove Sandcastle versus Tide completely and replace it with per-session random Chrysalis Garden or Hive focus scenes, local persistence, and permanent History boards.
+- [x] Enforce a strict lightweight animation budget for the new live scenes: one mounted theme, isolated native loops, capped particles/creatures, static History boards, and immediate pause freeze.
+- [x] Preserve rich visual quality in the Chrysalis Garden and Hive scenes without using JavaScript animation loops or unbounded render work.
+- [x] Add meaningful bounded live motion: roaming bees, caterpillar breathing/twitching/leaf movement, chrysalis sway/glow, and exact pause freeze.
+- [x] Diagnose and confirm independent per-session random Garden/Hive selection; repeated Garden draws remain valid random outcomes while each active session stays fixed.
+- [x] Enrich the Chrysalis Garden and Hive scenes with more attractive depth, lighting, environmental detail, creature detail, and satisfying stage transitions while retaining bounded native-thread motion.
+- [x] Remove the visible 1–4 stage markers and refine Garden/Hive animation timing for a richer, smoother feel without increasing runtime weight.
+- [x] Replace the four-round visual reset with a persistent 26-round equally paced Garden/Hive journey, including butterfly emergence and natural bee resting behavior.
+- [x] Add a soft optional 26th-round butterfly-emergence completion cue and randomly selected stable butterfly colour variants.
+- [x] Make visual growth equal through rounds 1–26, hold the completed state through rounds 27–28, then reset only after the second post-completion rest and the following new round begins.
+- [x] Diagnose and correct the EAS Android Gradle build failure reported during the Run gradlew phase.
+- [x] Restore the Expo SDK 54 / Google Mobile Ads compatible Android compile and target SDK settings, then require a clean EAS rebuild.
+- [x] Inspect and package any pending project changes so the corrected Android build can start without an unpackaged-changes warning.
+- [x] Diagnose and repair repeated Chrysalis Garden display so fresh sessions can visibly receive the Hive theme.
+- [x] Identify and package every remaining project change blocking an Android build.
+- [x] Verify the current mobile project is clean and clarify the backend-service unpublished-changes indicator.
+- [x] Diagnose why the Android publishing panel reports unpackaged changes after a clean saved checkpoint.
+- [x] Restore the Expo SDK 54-compatible Android build configuration after the visual rollback.
+- [x] Audit local Expo, EAS, Gradle, and native-plugin configuration for the unresolved Android build failure.
+- [x] Inspect the generated Android Gradle project for the repeated cloud-build failure after compatible managed prebuild succeeds.
+- [x] Audit dependency compatibility and provide a local EAS Android build procedure that exposes full Gradle logs.
+- [x] Add Windows PowerShell and WSL commands for local Android builds and full Gradle log capture.
+- [x] Diagnose and repair the Windows Expo configuration command failure before local Gradle debugging.
+- [x] Add a precise Windows PowerShell extraction command for the hidden Expo configuration error.
+- [x] Repair the Windows Node 22 Expo app.config loader failure, then validate local Android configuration resolution.
+- [x] Confirm Windows Android prebuild and capture the direct debug Gradle build result for targeted diagnosis.
+- [x] Add required Android versionName metadata to the custom session-bubble Expo module and revalidate Gradle configuration.
+- [x] Remove the Windows PowerShell UTF-8 byte-order mark from the session-bubble Gradle file and rerun the debug build.
+- [x] Extract the exact react-native-google-mobile-ads Kotlin compiler diagnostic before changing Android dependencies or configuration.
+- [x] Pin react-native-google-mobile-ads to an Expo SDK 54-compatible version that uses a Kotlin 2.1-readable Google Mobile Ads SDK.
+- [ ] Verify the Windows debug Gradle build after pinning the Mobile Ads compatibility release.
+- [x] Resolve the Mobile Ads native-source and Kotlin SDK compatibility conflict for React Native 0.81 / Expo SDK 54.
+- [x] Patch Mobile Ads 15.4.0 to use ReactApplicationContext.currentActivity so it compiles with React Native 0.81.
+- [x] Add a deterministic post-install compatibility repair for Mobile Ads 15.4.0 on React Native 0.81.
+- [x] Repair the session-bubble Android source registration so Expo autolinking can compile SessionBubbleModule.
+- [x] Superseded the missing local bubble-source issue by removing only the optional bubble module from Android autolinking for the release build.
+- [x] Move the existing session-bubble Kotlin file into Gradle’s explicit Kotlin source directory so it is compiled.
+- [x] Superseded direct bubble-source restoration by disabling the optional module from the release build.
+- [x] Temporarily disable Android autolinking for the optional session-bubble module to unblock the required Android debug build.
+- [ ] Route Windows Gradle temporary and user-home directories to short writable paths to fix the prefab staging failure.
+
+- [ ] Diagnose and improve Android focus-control behavior, including permission status, supported app interruption controls, and clear device limitations.
+
+- [ ] Implement and validate a Play-safe Focus Shield variant with clear Android DND, notification, and Screen Pinning guidance.
+- [ ] Design and document a separate device-owner/kiosk variant for the user’s own provisioned Android phone, without claiming Play Store compatibility.
+
+- [x] Give Garden and Hive a visibly distinct progression update after every one of the 26 focus rounds.
+- [x] Add one bee every two completed rounds, reaching 13 distinct bees by round 26, with recognizable bee anatomy and bounded natural motion.
+
+- [x] Ensure Hive progression uses 1 starting bee plus 1 new bee every 2 completed rounds, reaching 14 total at round 26.
+
+- [x] Replace the grid-like round markers with natural Garden growth and believable Hive construction milestones.
+- [x] Refine bee anatomy, spacing, and flight staging so the 14-bee ensemble feels natural rather than decorative.
+
+- [x] Redesign Hive bees from floating cartoon shapes into small natural honeybees inspired by the provided hive reference, with grounded perches and readable anatomy.
+
+- [x] Make a small subset of Hive bees fly short near-hive loops with pauses and returns while the rest remain naturally perched.
+
+- [x] Redesign Hive composition toward the provided hanging-hive reference with branch framing, layered wax, foliage, and clearer bee silhouettes.
+
+- [x] Replace the current bee visual with a clearer side-profile honeybee appearance while preserving existing motion and growth rules.
+
+- [x] Redesign Hive into a natural hanging-comb scene inspired by the provided photograph, including branch, organic comb, bee cluster, and active bees.
+- [x] Randomly select Garden, simpler Honey Hive, or River for each fresh session and keep the selected world fixed during that session.
+- [x] Add balanced three-world selection tests so each world remains reachable without relying on a long streak of luck.
